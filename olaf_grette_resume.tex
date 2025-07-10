@@ -3,10 +3,10 @@
 % Packages:
 \usepackage[
     ignoreheadfoot, % set margins without considering header and footer
-    top=1.5 cm, % seperation between body and page edge from the top
-    bottom=1.5 cm, % seperation between body and page edge from the bottom
-    left=1.5 cm, % seperation between body and page edge from the left
-    right=1.5 cm, % seperation between body and page edge from the right
+    top=1.2 cm, % seperation between body and page edge from the top
+    bottom=1.2 cm, % seperation between body and page edge from the bottom
+    left=1.3 cm, % seperation between body and page edge from the left
+    right=1.3 cm, % seperation between body and page edge from the right
     footskip=1.0 cm, % seperation between body and footer
     % showframe % for debugging 
 ]{geometry} % for adjusting page geometry
@@ -19,7 +19,7 @@
 \usepackage{fontawesome5} % for using icons
 \usepackage{amsmath} % for math
 \usepackage[
-    pdftitle={Olaf Grette's CV},
+    pdftitle={Olaf Grette's Resume},
     pdfauthor={Olaf Grette},
     colorlinks=true,
     urlcolor=primaryColor
@@ -172,6 +172,10 @@
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/olafgrette/}{linkedin.com/in/olafgrette}}%
+        \kern 5.0 pt%
+        \AND%
+        \kern 5.0 pt%
         \mbox{Renton, WA}%
     \end{header}
 
@@ -184,17 +188,19 @@
             \textbf{Amazon Web Services – Senior Software Engineer, EC2 Networking Analytics}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \textit{Led analytics engineering team for operational data from AWS's custom Software Defined Networking (VPC dataplane) implementation running on network cards in every physical EC2 host worldwide. The team's analytics platform and tooling supported operational intelligence, business intelligence, emission of customer-facing instance networking metrics, and proactive EC2 capacity management. Grew team from 4 to 12 engineers while serving as subject matter expert in analytics for the broader organization of embedded software engineers and networking specialists.}
+        \end{onecolentry}
+
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Designed and developed metrics ingestion platform reducing processing time from 32 hours to 15 minutes with 75\% cost reduction by migrating from Redshift-based ETL to Lambda/Step Functions/EMR architecture
-                \item Grew team from 4 to 12 SDEs while serving as Analytics subject matter expert for broader EC2 Networking organization
-                \item Built and maintained data pipelines processing 125TB+ of operational metrics daily across all AWS regions with sub-15 minute ingestion and sub-2 hour analytics generation SLAs
-                \item Designed anomaly detection platform to concurrently monitor billions of time series across EC2 instances and network interfaces to automatically detect deployment regressions
-                \item Reduced customer issue resolution time from multiple days to sub-1 hour through automated remediation capabilities and advanced analytics tooling
-                \item Mentored five entry level engineers to midlevel and one midlevel to senior
-                \item Collaborated with embedded software engineers developing AWS VPC networking cards and EC2 Product Management to align analytics solutions with operational visibility needs and future product requirements
-                \item Provided data-driven analysis and subject matter expertise to embedded engineering teams during high pressure operational events to resolve large outages affecting EC2 Networking customers
+                \item Developed and maintained multi-year roadmap and vision document, informing executive leadership on technical direction and product offerings to serve customer experience and business needs
+                \item Proposed, designed, and led development of metrics ingestion platform reducing processing time from 32 hours to 15 minutes with 75\% cost reduction by migrating from Redshift-based ETL to Lambda/Step Functions/EMR architecture
+                \item Led the team in enhancing a Spark job orchestration platform to enable processing 125TB+ of operational data and insight datasets daily across all AWS regions with sub-2-hour analytics generation SLAs, reducing customer issue detection and resolution time from multiple days (or not at all) to less than one day
+                \item Designed anomaly detection strategy on team's platform to concurrently monitor billions of time series across EC2 instances and network interfaces to detect deployment regressions in noisy customer driven metrics
+                \item Provided critical analysis and subject matter expertise during high-pressure operational events to resolve large outages affecting tens of thousands of EC2 Networking customers
             \end{highlights}
         \end{onecolentry}
 
@@ -206,10 +212,15 @@
             \textbf{Amazon Web Services – Software Engineer II, Amazon Keyspaces}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \textit{Worked as an individual contributor on control plane services for Amazon Keyspaces (managed Apache Cassandra), focusing on distributed management of table schema and backing data stores. Contributed to bringing Amazon Keyspaces from private preview to General Availability.}
+        \end{onecolentry}
+
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Brought Amazon Keyspaces from private preview to General Availability through backend implementation of DDL queries, documentation contributions, and operational stability improvements
+                \item Designed and implemented distributed column-dropping feature for Keyspaces tables, resulting in a US patent for efficient data store operations
             \end{highlights}
         \end{onecolentry}
 
@@ -221,11 +232,16 @@
             \textbf{Amazon Prime Video -- Software Engineer II, Personalization \& Machine Learning}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \textit{Worked as an individual contributor on backend services and ML pipelines for personalizing box art on Prime Video UI, focusing on correlating customer behavior with served artwork to optimize user engagement.}
+        \end{onecolentry}
+
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Led project to optimize Apache Spark Data Processing job operational load, reducing costs by 64\% and increasing processing capacity by 33\% (\$150k/year absolute savings)
-                \item Applied optimization learnings to assist other teams with similar Spark jobs
+                \item Led project to optimize Apache Spark data processing job operational load, reducing costs by 64\% and increasing processing capacity by 33\% (\$150k/year savings)
+                \item Designed and implemented software subsystem to dynamically pull and cache updated model weights from S3 without requiring software deployment
             \end{highlights}
         \end{onecolentry}
 
@@ -237,12 +253,17 @@
             \textbf{Omron Microscan – Software Engineer, Manufacturing Automation}
         \end{twocolentry}
 
-        \vspace{0.10 cm}
+        \vspace{0.05 cm}
+        \begin{onecolentry}
+            \textit{Served as sole software engineer in manufacturing operations, responsible for all production line software used by technicians to set up, test, and flash firmware on laser barcode scanners, code reading cameras, and machine vision systems. Coordinated with embedded software engineers on production requirements and maintained system integrations.}
+        \end{onecolentry}
+
+        \vspace{0.05 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Responsible for all Software (Frontend and Backend) on production lines for laser barcode scanners, high-performance code reading cameras, and machine vision-enabled quality verification cameras
-                \item Developed tracking system for production metrics and production flow enforcement (C\#, MSSQL, PowerBI), enabling data-driven operational improvements that increased line throughput by 10\% without additional costs through rebalanced station types
+                \item Developed tracking system for production metrics and production flow enforcement (C\#, MSSQL, Power BI), enabling data-driven improvements that increased line throughput by 10\% without costs through rebalanced station types
                 \item Developed integrated robotics solution for focusing camera lenses to fixed focal distance using gradient descent optimization over sharpness values and stepper motor positioning
+                \item Redesigned and rearchitected line software fixture to use C\# scripting instead of XML-defined processes, reducing maintenance effort for adding new models and submodels
             \end{highlights}
         \end{onecolentry}
 
@@ -277,9 +298,7 @@
         \vspace{0.10 cm}
         \begin{onecolentry}
             \begin{highlights}
-                \item Bachelor of Science
-                \item Dual Major in Computer Engineering (ABET accredited) and Computer Science
-                \item Mathematics Minor
+                \item Bachelor of Science - Majors in Computer Engineering (ABET accredited) and Computer Science, Mathematics Minor
             \end{highlights}
         \end{onecolentry}
 
