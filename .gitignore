@@ -3,3 +3,4 @@
 *.log
 *.aux
 !historical_pdfs/*.pdf
+!docs/*.pdf
