@@ -19,6 +19,10 @@ fi
 
 mv "$TMP_DIR/$PDF_NAME" "$TMP_DIR/$TEST_PDF_NAME"
 
-xdg-open "$TMP_DIR/$TEST_PDF_NAME"
+if ! xdg-open "$TMP_DIR/$TEST_PDF_NAME" 2>/dev/null; then
+    if ! open "$TMP_DIR/$TEST_PDF_NAME" 2>/dev/null; then
+        echo "Warning: couldn't automatically open the file: file://$TMP_DIR/$TEST_PDF_NAME"
+    fi
+fi
 
 echo "Test PDF generated at: $TMP_DIR/$TEST_PDF_NAME"
