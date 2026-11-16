@@ -10,6 +10,9 @@ TEST_PDF_NAME="olaf_grette_resume_${EPOCH}.pdf"
 
 mkdir -p "$TMP_DIR"
 
+echo "Converting Omron SVG to PDF..."
+rsvg-convert --format pdf --output assets/logos/omron.pdf assets/logos/omron.svg
+
 pdflatex -output-directory="$TMP_DIR" "$TEX_FILE"
 
 if [ ! -f "$TMP_DIR/$PDF_NAME" ]; then

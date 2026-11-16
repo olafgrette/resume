@@ -7,6 +7,9 @@ PDF_NAME="olaf_grette_resume.pdf"
 DOCS_DIR="docs"
 HISTORICAL_DIR="historical_pdfs"
 
+echo "Converting Omron SVG to PDF..."
+rsvg-convert --format pdf --output assets/logos/omron.pdf assets/logos/omron.svg
+
 echo "Running pdflatex on $TEX_FILE..."
 pdflatex -output-directory="$DOCS_DIR" "$TEX_FILE"
 
@@ -23,6 +26,7 @@ cp "$DOCS_DIR/$PDF_NAME" "$HISTORICAL_PDF"
 
 echo "Committing changes..."
 git add "$DOCS_DIR/$PDF_NAME" "$HISTORICAL_PDF"
-git commit -m "generate($TIMESTAMP): generate latest pdf"
+git commit -m "generate($TIMESTAMP): generate latest pdf" \
+    -m "Publish the reviewed resume and retain a dated copy for version history."
 
 echo "PDF generation complete!"

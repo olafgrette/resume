@@ -16,7 +16,9 @@
 \usepackage[dvipsnames]{xcolor} % for coloring text
 \definecolor{primaryColor}{RGB}{0, 0, 0} % define primary color
 \usepackage{enumitem} % for customizing lists
-\usepackage{fontawesome5} % for using icons
+\usepackage{fontawesome6} % for using icons
+\usepackage{graphicx}
+\usepackage{accsupp}
 \usepackage{amsmath} % for math
 \usepackage[
     pdftitle={Olaf Grette's Resume},
@@ -44,6 +46,12 @@
 \fi
 
 \usepackage{charter}
+
+% Logos are decorative; retain the adjacent text for copying and resume parsers.
+\newcommand{\decorativeicon}[1]{%
+    \BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}%
+}
+\newcommand{\companylogo}[1]{\decorativeicon{#1}\hspace{0.5em}}
 
 % Some settings:
 \raggedright
@@ -105,6 +113,7 @@
 } % new environment for one column entries
 
 \newenvironment{twocolentry}[2][]{
+    \needspace{4\baselineskip} % keep headings with the start of their description
     \onecolentry
     \def\secondColumn{#2}
     \setcolumnwidth{\fill, 4.5 cm}
@@ -172,7 +181,7 @@
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/olafgrette/}{linkedin.com/in/olafgrette}}%
+        \mbox{\hrefWithoutArrow{https://www.linkedin.com/in/olafgrette/}{\decorativeicon{\faLinkedin}\hspace{0.35em}linkedin.com/in/olafgrette}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
@@ -186,7 +195,7 @@
         \begin{twocolentry}{
             May 2026 – Present
         }
-            \textbf{Meta – Production Engineer, Cloud Infrastructure}
+            \textbf{\companylogo{\faMeta}Meta – Production Engineer, Cloud Infrastructure}
         \end{twocolentry}
 
         \vspace{0.05 cm}
@@ -209,7 +218,7 @@
         \begin{twocolentry}{
             Oct 2025 – May 2026
         }
-            \textbf{Meta – Production Engineer, Blob Storage Capacity and Efficiency}
+            \textbf{\companylogo{\faMeta}Meta – Production Engineer, Blob Storage Capacity and Efficiency}
         \end{twocolentry}
 
         \vspace{0.05 cm}
@@ -231,7 +240,7 @@
         \begin{twocolentry}{
             Nov 2020 – Sep 2025
         }
-            \textbf{Amazon Web Services – Senior Software Engineer, EC2 Networking Analytics}
+            \textbf{\companylogo{\faAws}Amazon Web Services – Senior Software Engineer, EC2 Networking Analytics}
         \end{twocolentry}
 
         \vspace{0.05 cm}
@@ -255,7 +264,7 @@
         \begin{twocolentry}{
             Jan 2020 – Nov 2020
         }
-            \textbf{Amazon Web Services – Software Engineer II, Amazon Keyspaces}
+            \textbf{\companylogo{\faAws}Amazon Web Services – Software Engineer II, Amazon Keyspaces}
         \end{twocolentry}
 
         \vspace{0.05 cm}
@@ -275,7 +284,7 @@
         \begin{twocolentry}{
             Oct 2018 – Jan 2020
         }
-            \textbf{Amazon Prime Video -- Software Engineer II, Personalization \& Machine Learning}
+            \textbf{\companylogo{\faAmazon}Amazon Prime Video -- Software Engineer II, Personalization \& Machine Learning}
         \end{twocolentry}
 
         \vspace{0.05 cm}
@@ -296,7 +305,7 @@
         \begin{twocolentry}{
             Feb 2017 – Oct 2018
         }
-            \textbf{Omron Microscan – Software Engineer, Manufacturing Automation}
+            \textbf{\companylogo{\includegraphics[height=0.7em]{assets/logos/omron.pdf}}Omron Microscan – Software Engineer, Manufacturing Automation}
         \end{twocolentry}
 
         \vspace{0.05 cm}
