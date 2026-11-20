@@ -22,10 +22,15 @@ fi
 
 mv "$TMP_DIR/$PDF_NAME" "$TMP_DIR/$TEST_PDF_NAME"
 
-if ! xdg-open "$TMP_DIR/$TEST_PDF_NAME" 2>/dev/null; then
-    if ! open "$TMP_DIR/$TEST_PDF_NAME" 2>/dev/null; then
-        echo "Warning: couldn't automatically open the file: file://$TMP_DIR/$TEST_PDF_NAME"
+OPEN_LOG="$TMP_DIR/${TEST_PDF_NAME%.pdf}.open.log"
+# Detach the viewer's input and output so it cannot hold the build terminal open.
+(
+    if ! xdg-open "$TMP_DIR/$TEST_PDF_NAME"; then
+        if ! open "$TMP_DIR/$TEST_PDF_NAME"; then
+            echo "Warning: couldn't automatically open the file: file://$TMP_DIR/$TEST_PDF_NAME"
+        fi
     fi
-fi
+) </dev/null >"$OPEN_LOG" 2>&1 &
 
 echo "Test PDF generated at: $TMP_DIR/$TEST_PDF_NAME"
+echo "Preview launcher log: $OPEN_LOG"

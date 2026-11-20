@@ -48,7 +48,7 @@
 \usepackage{charter}
 
 % Logos are decorative; retain the adjacent text for copying and resume parsers.
-\newcommand{\decorativeicon}[1]{%
+\DeclareRobustCommand{\decorativeicon}[1]{%
     \BeginAccSupp{method=escape,ActualText={}}#1\EndAccSupp{}%
 }
 \newcommand{\companylogo}[1]{\decorativeicon{#1}\hspace{0.5em}}
@@ -173,11 +173,11 @@
         \vspace{5 pt}
 
         \normalsize
-        \mbox{\hrefWithoutArrow{mailto:olaf@grette.org}{olaf@grette.org}}%
+        \mbox{\hrefWithoutArrow{mailto:olaf@grette.org}{\decorativeicon{\faEnvelope}\hspace{0.35em}olaf@grette.org}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{\hrefWithoutArrow{tel:+1-425-635-8149}{(425) 635 8149}}%
+        \mbox{\hrefWithoutArrow{tel:+1-425-635-8149}{\decorativeicon{\faPhone}\hspace{0.35em}(425) 635 8149}}%
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
@@ -185,12 +185,12 @@
         \kern 5.0 pt%
         \AND%
         \kern 5.0 pt%
-        \mbox{Renton, WA}%
+        \mbox{\decorativeicon{\faLocationDot}\hspace{0.35em}Renton, WA}%
 
         \small\color{gray}\textit{Generated \today. Latest version available at \hrefWithoutArrow{https://grette.org/resume}{grette.org/resume}}
     \end{header}
 
-    \section{Work Experience}
+    \section{\texorpdfstring{\decorativeicon{\faBuilding}\enspace}{}Work Experience}
 
         \begin{twocolentry}{
             May 2026 – Present
@@ -323,7 +323,7 @@
         \end{onecolentry}
 
     
-    \section{Intellectual Property}
+    \section{\texorpdfstring{\decorativeicon{\faFileSignature}\enspace}{}Intellectual Property}
 
         \begin{samepage}
             \begin{twocolentry}{
@@ -342,7 +342,7 @@
         \end{samepage}
 
     
-    \section{Education}
+    \section{\texorpdfstring{\decorativeicon{\faGraduationCap}\enspace}{}Education}
 
         \begin{twocolentry}{
             
